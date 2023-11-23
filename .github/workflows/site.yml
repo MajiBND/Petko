@@ -7,7 +7,7 @@
 # Your changes will be overwritten when the template updates (daily)
 # Instead, change your .upptimerc.yml configuration: https://upptime.js.org/docs
 
-name: Static Site CI
+name: Petco
 on:
   schedule:
     - cron: "0 1 * * *"
@@ -20,15 +20,15 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      - name: Checkout
+      - name: Petco
         uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GH_PAT || github.token }}
-      - name: Generate site
+      - name: Petco
         uses: upptime/uptime-monitor@v1.32.0
         with:
-          command: "site"
+          command: "https://petcoo.xyz"
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
       - uses: peaceiris/actions-gh-pages@v3.7.3
